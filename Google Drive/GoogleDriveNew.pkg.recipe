@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest version of Google Drive for desktop and builds a pkg. Note Google Drive File Stream was rebranded to Google Drive for desktop, and this recipe updated to reflect the name change.</string>
     <key>Identifier</key>
-    <string>com.github.advisoryteam.pkg.GoogleDriveNew</string>
+    <string>com.github.advisoryteam.pkg.GoogleDrive</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
