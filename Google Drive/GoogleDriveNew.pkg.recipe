@@ -46,7 +46,7 @@
                 <string>%RECIPE_CACHE_DIR%/payload/Google Drive.app/Contents/Info.plist</string>
                 <key>plist_keys</key>
                 <dict>
-                    <key>CFBundleShortVersionString</key>
+                    <key>CFBundleVersion</key>
                     <string>version</string>
                     <key>LSMinimumSystemVersion</key>
                     <string>min_os_version</string>
