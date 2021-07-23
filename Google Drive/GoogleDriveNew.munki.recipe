@@ -28,10 +28,7 @@
 			<string>10.6</string>
 			<key>unattended_install</key>
 			<true/>
-			<key>postinstall_script</key>
-			<string>#!/bin/sh
-
-	</dict>
+		</dict>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
