@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest Google Drive disk image and imports into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.advisoryteam.munki.GoogleDrive</string>
+	<string>com.github.advisoryteam.munki.GoogleDriveNew</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
