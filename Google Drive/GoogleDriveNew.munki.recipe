@@ -36,13 +36,24 @@
 	<string>com.github.advisoryteam.download.GoogleDriveNew</string>
 	<key>Process</key>
 	<array>
+	    <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/payload</string>
+                <key>pkg_payload_path</key>
+                <string>%RECIPE_CACHE_DIR%/unpack/GoogleDrive_x86_64.pkg/Payload</string>
+            </dict>
+            <key>Processor</key>
+            <string>PkgPayloadUnpacker</string>
+        </dict>
 		<dict>
 			<key>Processor</key>
 			<string>Versioner</string>
 			<key>Arguments</key>
 			<dict>
 				<key>input_plist_path</key>
-				<string>%pathname%/Google Drive.app/Contents/Info.plist</string>
+				<string>%pathname%/payload/Google Drive.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
 				<string>CFBundleVersion</string>
 			</dict>
