@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Google Drive</string>
+		<string>GoogleDrive</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/google</string>
 		<key>pkginfo</key>
@@ -66,7 +66,7 @@
 				<key>input_plist_path</key>
 				<string>%RECIPE_CACHE_DIR%/payload/Google Drive.app/Contents/Info.plist</string>
 				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
+				<string>CFBundleVersion</string>
 			</dict>
 		</dict>
 		<dict>
@@ -89,7 +89,7 @@
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 				<key>version_comparison_key</key>
-				<string>CFBundleShortVersionString</string>
+				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
