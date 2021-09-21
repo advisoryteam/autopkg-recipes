@@ -25,7 +25,7 @@ import requests
 
 __all__ = ["TeamsPoster"]
 
-class Slacker(Processor):
+class TeamsPoster(Processor):
     description = ("Posts to Microsoft Teams via webhook based on output of a MunkiImporter. "
                     "Based on Graham Pugh's slacker.py - https://github.com/grahampugh/recipes/blob/master/PostProcessors/slacker.py"
                     "and "
