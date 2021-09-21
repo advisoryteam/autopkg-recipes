@@ -103,7 +103,7 @@ class TeamsPoster(Processor):
             headers = {
                 'Content-Type': 'application/json'
             }
-            response = requests.post(webhook_url, headers=headers, data=json.dumps(teams_data))
+            response = requests.post(webhook_url, headers=headers, data=teams_data)
             if response.status_code != 200:
             raise ValueError(
                             'Request to Teams returned an error %s, the response is:\n%s'
