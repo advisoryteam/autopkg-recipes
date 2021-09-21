@@ -65,7 +65,8 @@ class TeamsPoster(Processor):
             pkginfo_path = self.env.get("munki_importer_summary_result")["data"]["pkginfo_path"]
             catalog = self.env.get("munki_importer_summary_result")["data"]["catalogs"]
             if name:
-                teams_data = "{  
+                teams_data = """
+                {  
                   "@context": "https://schema.org/extensions",  
                   "@type": "MessageCard",
                   "summary": "Munki card",
@@ -98,7 +99,8 @@ class TeamsPoster(Processor):
                       ],
                     }
                   ]
-                }" % (name, version, catalog, pkg_path, pkginfo_path)
+                }
+                """ % (name, version, catalog, pkg_path, pkginfo_path)
 
             response = requests.post(webhook_url, json=json.dumps(teams_data))
             if response.status_code != 200:
