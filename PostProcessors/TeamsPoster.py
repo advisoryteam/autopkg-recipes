@@ -101,13 +101,14 @@ class TeamsPoster(Processor):
                   ]
                 }
                 """ % (name, version, catalog, pkg_path, pkginfo_path)
-
-            response = requests.post(webhook_url, json=json.dumps(teams_data))
-            if response.status_code != 200:
-            raise ValueError(
-                            'Request to Teams returned an error %s, the response is:\n%s'
-                            % (response.status_code, response.text)
-                            )
+                
+                response = requests.post(
+                webhook_url, json=json.dumps(teams_data))
+                if response.status_code != 200:
+                    raise ValueError(
+                                'Request to Teams returned an error %s, the response is:\n%s'
+                                % (response.status_code, response.text)
+                                )
 
 
 if __name__ == "__main__":
