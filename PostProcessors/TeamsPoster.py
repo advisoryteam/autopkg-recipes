@@ -146,8 +146,10 @@ class TeamsPoster(Processor):
                     "padding": "None"
                 } % (name, version, catalog, pkg_path, pkginfo_path)
 
-            response = requests.post(
-            webhook_url, json=teams_data)
+            headers = {
+                'Content-Type': 'application/json'
+            }
+            response = requests.post(webhook_url, headers=headers, data=json.dumps(teams_data))
             if response.status_code != 200:
             raise ValueError(
                             'Request to Teams returned an error %s, the response is:\n%s'
