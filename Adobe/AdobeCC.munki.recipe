@@ -7,7 +7,7 @@
     <key>Input</key>
     <dict>
       <key>MUNKI_REPO_SUBDIR</key>
-      <string>Adobe</string>
+      <string>apps/Adobe/CC</string>
       <key>NAME</key>
       <string>Creative Cloud Installer</string>
       <key>pkginfo</key>
@@ -23,9 +23,9 @@
         <key>developer</key>
         <string>Adobe</string>
         <key>display_name</key>
-        <string>Creative Cloud Installer</string>
+        <string>Adobe Creative Cloud Installer</string>
         <key>name</key>
-        <string>Creative_Cloud_Installer</string>
+        <string>Adobe Creative Cloud Installer</string>
         <key>unattended_install</key>
         <true/>
         <key>uninstall_method</key>
