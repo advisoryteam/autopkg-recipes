@@ -65,85 +65,39 @@ class TeamsPoster(Processor):
             pkginfo_path = self.env.get("munki_importer_summary_result")["data"]["pkginfo_path"]
             catalog = self.env.get("munki_importer_summary_result")["data"]["catalogs"]
             if name:
-                teams_data = {
-                    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-                    "type": "AdaptiveCard",
-                    "version": "1.0",
-                    "body": [
+                teams_data = {  
+                  "@context": "https://schema.org/extensions",  
+                  "@type": "MessageCard",
+                  "summary": "Munki card",
+                  "themeColor": "0072C6",
+                  "sections": [
+                      {
+                        "activityTitle": "New item imported into Munki:",
+                        "activityImage": "https://emoji.slack-edge.com/T3TCY3AMU/munki/eabba2d2c6027aaf.png",
+                        "facts": [
                         {
-                            "type": "Container",
-                            "id": "2dd12537-117c-dfa2-1804-317dd43563d8",
-                            "padding": "None",
-                            "items": [
-                                {
-                                    "type": "ColumnSet",
-                                    "columns": [
-                                        {
-                                            "type": "Column",
-                                            "id": "efa405ce-8bc5-8e0b-ef40-6d435d55d7cb",
-                                            "padding": "None",
-                                            "width": "auto",
-                                            "items": [
-                                                {
-                                                    "type": "Image",
-                                                    "id": "4fbed97f-016e-7d8f-a8f5-a87e16e39da8",
-                                                    "url": "https://emoji.slack-edge.com/T3TCY3AMU/munki/eabba2d2c6027aaf.png",
-                                                    "size": "Small"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Column",
-                                            "id": "a790e77b-7324-4e65-c731-bf0b4a2d3f71",
-                                            "padding": "None",
-                                            "width": "stretch",
-                                            "items": [
-                                                {
-                                                    "type": "TextBlock",
-                                                    "id": "ee0da3bd-da41-bb1c-8f34-84072262e97b",
-                                                    "text": "New item imported into Munki:",
-                                                    "wrap": true,
-                                                    "weight": "Bolder",
-                                                    "horizontalAlignment": "Left"
-                                                }
-                                            ],
-                                            "horizontalAlignment": "Left",
-                                            "verticalContentAlignment": "Center"
-                                        }
-                                    ],
-                                    "padding": "None"
-                                }
-                            ]
+                          "name": "Title:",
+                          "value": "%s"
                         },
                         {
-                            "type": "FactSet",
-                            "id": "35f73aa7-c58e-120a-3f5b-90a542ac3a96",
-                            "facts": [
-                                {
-                                    "title": "- Title:",
-                                    "value": "%s"
-                                },
-                                {
-                                    "title": "- Version:",
-                                    "value": "%s"
-                                },
-                                {
-                                    "title": "- Catalog:",
-                                    "value": "%s"
-                                },
-                                {
-                                    "title": "- Pkg Path:",
-                                    "value": "%s"
-                                },
-                                {
-                                    "title": "- Pkginfo Path:",
-                                    "value": "%s"
-                                }
-                            ],
-                            "separator": true
+                          "name": "Version:",
+                          "value": "%s"
+                        },
+                        {
+                          "name": "Catalog:",
+                          "value": "%s"
+                        },
+                        {
+                          "name": "Pkg Path:",
+                          "value": "%s"
+                        },
+                        {
+                          "name": "Pkginfo Path:",
+                          "value": "%s"
                         }
-                    ],
-                    "padding": "None"
+                      ],
+                    }
+                  ]
                 } % (name, version, catalog, pkg_path, pkginfo_path)
 
             headers = {
