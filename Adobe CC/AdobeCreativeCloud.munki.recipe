@@ -28,6 +28,11 @@
 			<string>10.6</string>
 			<key>unattended_install</key>
 			<true/>
+			<key>supported_architectures</key>
+			<array>
+               <string>i386</string>
+               <string>x86_64</string>
+            </array>
 		</dict>
 	</dict>
 	<key>MinimumVersion</key>
