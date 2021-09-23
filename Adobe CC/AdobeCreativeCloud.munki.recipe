@@ -43,7 +43,7 @@
                 <key>destination_path</key>
                 <string>%RECIPE_CACHE_DIR%/unpack</string>
                 <key>flat_pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/AdobeCreativeCloudInstaller.pkg/Payload</string>
+                <string>%RECIPE_CACHE_DIR%/AdobeCreativeCloudInstaller-%version%.pkg/Payload</string>
             </dict>
             <key>Processor</key>
             <string>FlatPkgUnpacker</string>
