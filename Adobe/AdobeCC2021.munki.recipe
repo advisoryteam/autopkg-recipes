@@ -3,9 +3,11 @@
 <plist version="1.0">
     <dict>
         <key>Description</key>
-        <string>Import a Creative Cloud Application's pkg into Munki</string>
+        <string>Import a Creative Cloud Application's pkg into Munki
+        Please Review the changes to this recipe here
+        https://github.com/autopkg/dataJAR-recipes/blob/master/Adobe%202021/README.md</string>
         <key>Identifier</key>
-        <string>com.github.advisoryteam.munki.AdobeCC2021</string>
+        <string>com.github.dataJAR-recipes.munki.Import Adobe 2021 Title</string>
         <key>Input</key>
         <dict>
             <key>force_munkiimport</key>
@@ -13,7 +15,7 @@
             <key>MINIMUM_OS_VERSION</key>
             <string>10.14.0</string>
             <key>MUNKI_CATEGORY</key>
-            <string>Third Party Apps</string>
+            <string>Applications</string>
             <key>MUNKI_DESCRIPTION</key>
             <string>Some description.</string>
             <key>MUNKI_DEVELOPER</key>
@@ -21,9 +23,9 @@
             <key>MUNKI_NAME</key>
             <string>SomeAdobe2021Title</string>
             <key>NAME</key>
-            <string>AdobeCC2021</string>
+            <string>SomeAdobe2021Title - must match package name</string>
             <key>MUNKI_REPO_SUBDIR</key>
-            <string>apps%/Adobe/CC</string>
+            <string>%MUNKI_CATEGORY%/%MUNKI_DEVELOPER%/%NAME%</string>
             <key>pkginfo</key>
             <dict>
                 <key>catalogs</key>
