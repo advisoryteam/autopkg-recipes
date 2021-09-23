@@ -33,44 +33,45 @@
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.advisoryteam.download.AdobeCreativeCloud</string>
+	<string>com.github.advisoryteam.pkg.AdobeCreativeCloud</string>
 	<key>Process</key>
-	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%pathname%</string>
-				<key>destination_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-				<key>purge_destination</key>
-				<true/>
-			</dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>dmg_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
-				<key>dmg_root</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
-			</dict>
-			<key>Processor</key>
-			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>pkg_path</key>
-				<string>%dmg_path%</string>
-				<key>repo_subdirectory</key>
-				<string>%MUNKI_REPO_SUBDIR%</string>
-			</dict>
-			<key>Processor</key>
-			<string>MunkiImporter</string>
-		</dict>
-	</array>
+    <array>
+      <dict>
+        <key>Arguments</key>
+        <dict>
+          <key>additional_pkginfo</key>
+          <dict>
+            <key>installs</key>
+            <array>
+              <dict>
+                <key>CFBundleName</key>
+                <string>Creative Cloud</string>
+                <key>CFBundleShortVersionString</key>
+                <string>%version%</string>
+                <key>path</key>
+                <string>/Applications/Utilities/Adobe Creative Cloud/ACC/Creative Cloud.app</string>
+                <key>type</key>
+                <string>application</string>
+                <key>version_comparison_key</key>
+                <string>CFBundleShortVersionString</string>
+              </dict>
+            </array>
+          </dict>
+        </dict>
+        <key>Processor</key>
+        <string>MunkiPkginfoMerger</string>
+      </dict>
+      <dict>
+        <key>Processor</key>
+        <string>MunkiImporter</string>
+        <key>Arguments</key>
+        <dict>
+          <key>pkg_path</key>
+          <string>%pkg_path%</string>
+          <key>repo_subdirectory</key>
+          <string>%MUNKI_REPO_SUBDIR%</string>
+        </dict>
+      </dict>
+    </array>
 </dict>
 </plist>
