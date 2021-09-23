@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Adobe's Creative Cloud Desktop App Installer and uploads it to Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.advisoryteam.munki.AdobeCreativeCloud</string>
+	<string>com.github.advisoryteam.munki.AdobeCC-Intel</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -38,7 +38,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.advisoryteam.pkg.AdobeCreativeCloud</string>
+	<string>com.github.advisoryteam.pkg.AdobeCC-Intel</string>
 	<key>Process</key>
     <array>
       <dict>
