@@ -34,7 +34,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.rtrouton.download.AdobeCreativeCloudInstaller</string>
+	<string>com.github.advisoryteam.pkg.AdobeCreativeCloud</string>
 	<key>Process</key>
 	<array>
 	    <dict>
@@ -43,7 +43,7 @@
                 <key>destination_path</key>
                 <string>%RECIPE_CACHE_DIR%/unpack</string>
                 <key>flat_pkg_path</key>
-                <string>%pathname%/AdobeCC.pkg</string>
+                <string>%pathname%/AdobeCreativeCloudInstaller.pkg</string>
             </dict>
             <key>Processor</key>
             <string>FlatPkgUnpacker</string>
@@ -54,7 +54,7 @@
                 <key>destination_path</key>
                 <string>%RECIPE_CACHE_DIR%/payload</string>
                 <key>pkg_payload_path</key>
-                <string>%RECIPE_CACHE_DIR%/unpack/AdobeCC.pkg/Payload</string>
+                <string>%RECIPE_CACHE_DIR%/unpack/AdobeCreativeCloudInstaller.pkg/Payload</string>
             </dict>
             <key>Processor</key>
             <string>PkgPayloadUnpacker</string>
