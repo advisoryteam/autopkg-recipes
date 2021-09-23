@@ -18,6 +18,8 @@
 			<array>
 				<string>Production</string>
 			</array>
+			<key>category</key>
+			<string>Third Party Apps</string>
 			<key>description</key>
 			<string>Creative Cloud Desktop gives you the world’s favorite Adobe creative tools, always up to date.</string>
 			<key>display_name</key>
