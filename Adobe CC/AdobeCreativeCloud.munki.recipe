@@ -20,7 +20,7 @@
 				<string>Production</string>
 			</array>
 			<key>description</key>
-			<string>Adobe Creative Cloud for Mac.</string>
+			<string>Creative Cloud Desktop gives you the world’s favorite Adobe creative tools, always up to date..</string>
 			<key>display_name</key>
 			<string>Adobe Creative Cloud Installer</string>
 			<key>name</key>
@@ -34,9 +34,144 @@
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.advisoryteam.pkg.AdobeCreativeCloud</string>
+	<string>com.github.advisoryteam.download.AdobeCreativeCloud</string>
 	<key>Process</key>
-    <array>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+				<key>pkgdirs</key>
+				<dict/>
+			</dict>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict/>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>source_path</key>
+				<string>%pathname%/packages/ApplicationInfo.xml</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/ApplicationInfo.xml</string>
+				<key>overwrite</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>xml_path</key>
+				<string>%RECIPE_CACHE_DIR%/ApplicationInfo.xml</string>
+				<key>elements</key>
+				<array>
+					<dict>
+						<key>xpath</key>
+						<string>version</string>
+						<key>text</key>
+						<string>version</string>
+					</dict>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>XMLReader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>Copier</string>
+			<key>Arguments</key>
+			<dict>
+				<key>source_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts/%VENDOR%%NAMEWITHOUTSPACES%-%version%.dmg</string>
+				<key>overwrite</key>
+				<true/>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts/postinstall</string>
+				<key>file_mode</key>
+				<string>0755</string>
+				<key>file_content</key>
+				<string>#!/bin/bash
+				
+# Determine working directory
+installDir=$(dirname $0)
+dmg=("${installDir}"/*\.dmg)
+
+# Mount the disk image to /Volumes
+mountResult=$(/usr/bin/hdiutil attach "${dmg}" -nobrowse -noverify -noautoopen)
+mountPoint=$(/bin/echo "${mountResult}" | /usr/bin/grep Volumes | /usr/bin/awk '{print substr($0, index($0,$3))}')
+
+# Install the software
+"${mountPoint}/Install.app/Contents/MacOS/Install" --mode=silent
+
+# Get the exit code so we can fail properly
+exitcode=$?
+
+# Unmount the disk image from /Volumes
+/usr/bin/hdiutil detach "${mountPoint}"
+
+# Exit according to whether the install succeeded or not
+exit "${exitcode}"
+</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_request</key>
+				<dict>
+					<key>pkgroot</key>
+					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+					<key>pkgname</key>
+					<string>%VENDOR%%NAMEWITHOUTSPACES%-%version%</string>
+					<key>pkgtype</key>
+					<string>flat</string>
+					<key>id</key>
+					<string>com.adobe.AdobeCreativeCloudInstaller.pkg</string>
+					<key>version</key>
+					<string>%version%</string>
+					<key>scripts</key>
+					<string>Scripts</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+					<string>%RECIPE_CACHE_DIR%/Scripts</string>
+					<string>%RECIPE_CACHE_DIR%/ApplicationInfo.xml</string>
+				</array>
+			</dict>
+		</dict>
         <dict>
             <key>Arguments</key>
             <dict>
