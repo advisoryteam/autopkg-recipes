@@ -19,7 +19,7 @@
 				<string>Production</string>
 			</array>
 			<key>description</key>
-			<string>Creative Cloud Desktop gives you the world’s favorite Adobe creative tools, always up to date..</string>
+			<string>Creative Cloud Desktop gives you the world’s favorite Adobe creative tools, always up to date.</string>
 			<key>display_name</key>
 			<string>Adobe Creative Cloud Installer</string>
 			<key>name</key>
@@ -29,12 +29,6 @@
 			<key>unattended_install</key>
 			<true/>
 		</dict>
-		<key>SOFTWARETITLE</key>
-		<string>Creative Cloud Installer</string>
-		<key>NAMEWITHOUTSPACES</key>
-		<string>CreativeCloudInstaller</string>
-		<key>VENDOR</key>
-		<string>Adobe</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
@@ -164,7 +158,18 @@ exit "${exitcode}"
 				</dict>
 			</dict>
 		</dict>
-		<dict>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>pkg_path</key>
+                <string>%pathname%</string>
+                <key>repo_subdirectory</key>
+                <string>%MUNKI_REPO_SUBDIR%</string>
+            </dict>
+            <key>Processor</key>
+            <string>MunkiImporter</string>
+        </dict>
+        <dict>
 			<key>Processor</key>
 			<string>PathDeleter</string>
 			<key>Arguments</key>
@@ -177,17 +182,6 @@ exit "${exitcode}"
 				</array>
 			</dict>
 		</dict>
-        <dict>
-            <key>Arguments</key>
-            <dict>
-                <key>pkg_path</key>
-                <string>%pathname%</string>
-                <key>repo_subdirectory</key>
-                <string>%MUNKI_REPO_SUBDIR%</string>
-            </dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
-        </dict>
     </array>
 </dict>
 </plist>
