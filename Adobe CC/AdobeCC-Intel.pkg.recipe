@@ -133,7 +133,7 @@ exit "${exitcode}"
 					<key>pkgroot</key>
 					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
 					<key>pkgname</key>
-					<string>%VENDOR%%NAMEWITHOUTSPACES%-%version%-Intel</string>
+					<string>%VENDOR%%NAMEWITHOUTSPACES%-Intel-%version%</string>
 					<key>pkgtype</key>
 					<string>flat</string>
 					<key>id</key>
