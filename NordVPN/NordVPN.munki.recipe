@@ -11,9 +11,9 @@
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/BitDefender</string>
+		<string>apps/NordVPN</string>
 		<key>NAME</key>
-		<string>BitDefender</string>
+		<string>NordVPN</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -27,9 +27,9 @@
 			<key>description</key>
 			<string>Ideal VPN for macOS Sierra 10.12 or later.</string>
 			<key>developer</key>
-			<string>Bitdefender SRL</string>
+			<string>NordVPN s.a</string>
 			<key>display_name</key>
-			<string>Endpoint Security for Mac</string>
+			<string>NordVPN</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
