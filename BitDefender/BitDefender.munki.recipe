@@ -5,35 +5,27 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Endpoint Security for Mac and imports it into Munki.</string>
+	<string>Downloads the latest version of Bitdefender and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.advisoryteam.munki.BitDefender</string>
+	<string>com.github.advisoryteam.munki.Bitdefender</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/BitDefender</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>BitDefender</string>
+		<string>Bitdefender</string>
 		<key>pkginfo</key>
 		<dict>
-			<key>blocking_applications</key>
-			<array>
-				<string>SecurityNetworkInstallerApp.app</string>
-				<string>Endpoint Security for Mac.app</string>
-				<string>BDLDaemon.app</string>
-				<string>EndpointSecurityforMac.app</string>
-				<string>EndpointSecurityforMacUninstaller.app</string>
-			</array>
 			<key>catalogs</key>
 			<array>
 				<string>Production</string>
 			</array>
 			<key>description</key>
-			<string>BitDefender helps secure your workstation by adding prevention, detection, and response technology on top of your operating system. Sophos Endpoint Protection is designed for workstations running Windows and macOS.</string>
+			<string> </string>
 			<key>developer</key>
 			<string>Bitdefender SRL</string>
 			<key>display_name</key>
-			<string>BitDefender</string>
+			<string>Bitdefender</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -43,9 +35,21 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.advisoryteam.download.BitDefender</string>
+	<string>com.github.advisoryteam.download.Bitdefender</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>additional_pkginfo</key>
+				<dict>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiPkginfoMerger</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -53,6 +57,8 @@
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>version_comparison_key</key>
+				<string>CFBundleVersion</string>
 			</dict>
 			<key>Processor</key>
 			<string>MunkiImporter</string>
