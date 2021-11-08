@@ -5,13 +5,13 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of NordVPN for Mac and imports it into Munki.</string>
+	<string>Downloads the latest version of NordVPN and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.advisoryteam.munki.NordVPN</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/NordVPN</string>
+		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>NordVPN</string>
 		<key>pkginfo</key>
@@ -19,15 +19,18 @@
 			<key>blocking_applications</key>
 			<array>
 				<string>NordVPN.app</string>
+				<string>NordVPNLauncher Sideload.app</string>
 			</array>
 			<key>catalogs</key>
 			<array>
 				<string>Production</string>
 			</array>
+			<key>category</key>
+			<string>Third Party Apps</string>
 			<key>description</key>
-			<string>Ideal VPN for macOS Sierra 10.12 or later.</string>
+			<string>Military-grade protection online.</string>
 			<key>developer</key>
-			<string>NordVPN s.a</string>
+			<string>Nordvpn S.A.</string>
 			<key>display_name</key>
 			<string>NordVPN</string>
 			<key>name</key>
@@ -45,8 +48,19 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>pkg_path</key>
-				<string>%pathname%</string>
+				<string>%dmg_path%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
 			</dict>
