@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest &apos;Adobe Connect&apos; and imports into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.advisoryteam.munki.AdobeConnect</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Adobe Connect</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>Production</string>
+			</array>
+			<key>description</key>
+			<string>Adobe Connect enables you with the real power of virtual to tell unforgettable stories. Use its versatile stage to design and deliver stellar virtual experiences for a diverse audience. Let it make your training, webinars, and meetings extraordinary and securely extend your reach far and beyond the ordinary.</string>
+			<key>display_name</key>
+			<string>Adobe Connect</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.advisoryteam.download.AdobeConnect</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
