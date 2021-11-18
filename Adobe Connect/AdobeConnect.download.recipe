@@ -35,19 +35,10 @@
 			<string>EndOfCheckPhase</string>
 		</dict>
 		<dict>
-			<key>Processor</key>
-			<string>Unarchiver</string>
-			<key>Arguments</key>
-			<dict>
-				<key>archive_path</key>
-				<string>%RECIPE_CACHE_DIR%/downloads/%NAME%.zip</string>
-			</dict>
-		</dict>
-		<dict>
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%pathname%/AdobeConnect.pkg</string>
+                <string>%pathname%/%NAME%.dmg</string>
                 <key>expected_authority_names</key>
                 <array>
                     <string>Developer ID Application: Adobe Inc. (JQ525L2MZD)</string>
