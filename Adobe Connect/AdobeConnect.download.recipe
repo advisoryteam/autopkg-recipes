@@ -36,7 +36,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%pathname%/%NAME%.dmg</string>
+                <string>%RECIPE_CACHE_DIR%/downloads/%NAME%.dmg</string>
                 <key>expected_authority_names</key>
                 <array>
                     <string>Developer ID Application: Adobe Inc. (JQ525L2MZD)</string>
