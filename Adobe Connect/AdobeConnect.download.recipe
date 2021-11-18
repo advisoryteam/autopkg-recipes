@@ -12,6 +12,8 @@
 		<string>Adobe Connect</string>
 		<key>DOWNLOAD_URL</key>
 		<string>https://www.adobe.com/go/ConnectMac11Plus</string>
+		<key>DISABLE_CODE_SIGNATURE_VERIFICATION</key>
+		<true/>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
