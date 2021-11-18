@@ -12,16 +12,12 @@
 		<string>Adobe Connect</string>
 		<key>DOWNLOAD_URL</key>
 		<string>https://www.adobe.com/go/ConnectMac11Plus</string>
-		<key>DISABLE_CODE_SIGNATURE_VERIFICATION</key>
-		<true/>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>URLDownloader</string>
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
@@ -29,6 +25,8 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 			</dict>
+			<key>Processor</key>
+            <string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
