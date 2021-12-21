@@ -18,6 +18,8 @@
 			<array>
 				<string>Production</string>
 			</array>
+			<key>category</key>
+			<string>Third Party Apps</string>
 			<key>description</key>
 			<string>Adobe Connect enables you with the real power of virtual to tell unforgettable stories. Use its versatile stage to design and deliver stellar virtual experiences for a diverse audience. Let it make your training, webinars, and meetings extraordinary and securely extend your reach far and beyond the ordinary.</string>
 			<key>display_name</key>
