@@ -28,6 +28,9 @@
 			<string>Notion</string>
 			<key>name</key>
 			<string>%NAME%</string>
+			<key>postinstall_script</key>
+			<string>#!/bin/sh
+chmod -R 775 /Applications/Notion.app</string>
 			<key>unattended_install</key>
 			<true/>
 		</dict>
