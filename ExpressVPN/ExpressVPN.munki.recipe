@@ -22,8 +22,10 @@
 			</array>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>Production</string>
 			</array>
+			<key>category</key>
+			<string>Third Party Apps</string>
 			<key>description</key>
 			<string> </string>
 			<key>developer</key>
