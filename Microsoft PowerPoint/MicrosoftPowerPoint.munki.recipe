@@ -40,10 +40,6 @@
             <string>Microsoft PowerPoint</string>
             <key>name</key>
             <string>%NAME%</string>
-            <key>postinstall_script</key>
-            <string>#!/bin/bash
-defaults write /Library/Preferences/com.microsoft.autoupdate2 AcknowledgedDataCollectionPolicy RequiredDataOnly
-</string>
             <key>unattended_install</key>
             <true/>
             <key>unattended_uninstall</key>
