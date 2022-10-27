@@ -7,7 +7,7 @@
 	
     These in turn, utilise the fwlink's found on macadmins.software</string>
     <key>Identifier</key>
-    <string>com.github.advisoryteam.munki.MicrosoftWord</string>
+    <string>com.github.advisoryteam.munki.MicrosoftTeams</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
