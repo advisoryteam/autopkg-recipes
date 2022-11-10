@@ -37,7 +37,7 @@
 			<key>preinstall_script</key>
 			<string>#!/bin/bash
 			
-sudo launchctl unload com.expressvpn.expressvpnd.plist
+sudo launchctl unload /Library/LaunchDaemons/com.expressvpn.expressvpnd.plist
 </string>
 			<key>unattended_install</key>
 			<true/>
