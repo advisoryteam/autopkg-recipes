@@ -14,12 +14,6 @@
 		<string>ExpressVPN</string>
 		<key>pkginfo</key>
 		<dict>
-			<key>blocking_applications</key>
-			<array>
-				<string>ExpressVPN IKEv2.app</string>
-				<string>ExpressVPN.app</string>
-				<string>ExpressVPN Launcher.app</string>
-			</array>
 			<key>catalogs</key>
 			<array>
 				<string>Production</string>
