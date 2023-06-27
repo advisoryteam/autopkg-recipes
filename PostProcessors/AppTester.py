@@ -46,6 +46,7 @@ class AppTester(Processor):
     def main(self):
         was_imported = self.env.get("munki_repo_changed")
         munkiInfo = self.env.get("munki_info")
+        pkginfo_path = self.env.get("munki_importer_summary_result")["data"]["pkginfo_path"]
         username = self.env.get("username")
         access_token = self.env.get("access_token")
         requests_url = self.env.get("requests_url")
@@ -61,7 +62,8 @@ class AppTester(Processor):
                 post_data = {
                     "event_type": "app_test",
                     "client_payload": {
-                        "app": name
+                        "app": name,
+                        "pkg_info": pkg_info
                     }
                 }
                 
