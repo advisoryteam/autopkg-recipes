@@ -7,9 +7,9 @@ import os.path
 import json
 import requests
 
-__all__ = ["Tester"]
+__all__ = ["AppTester"]
 
-class Tester(Processor):
+class AppTester(Processor):
     description = ("Sends the most recently uploaded application title to a GitHub Actions workflow.")
 
     input_variables = {
@@ -81,5 +81,5 @@ class Tester(Processor):
                                 )
 
 if __name__ == "__main__":
-    processor = Tester()
+    processor = AppTester()
     processor.execute_shell()
