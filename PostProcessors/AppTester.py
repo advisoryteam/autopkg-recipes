@@ -73,12 +73,6 @@ class AppTester(Processor):
                 auth = (username, access_token)
                 
                 response = requests.post(requests_url, headers=headers, data=json.dumps(post_data), auth=auth)
-                
-                if response.status_code != 200:
-                    raise ValueError(
-                                'Request to GitHub resulted in an error %s, the response is:\n%s'
-                                % (response.status_code, response.text)
-                                )
 
 if __name__ == "__main__":
     processor = AppTester()
