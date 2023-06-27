@@ -63,7 +63,8 @@ class AppTester(Processor):
                     "event_type": "app_test",
                     "client_payload": {
                         "app": name,
-                        "pkg_info": pkg_info
+                        "pkg_info": pkg_info,
+                        "manifest_name": manifest_name
                     }
                 }
                 
