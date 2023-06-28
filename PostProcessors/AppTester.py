@@ -46,6 +46,7 @@ class AppTester(Processor):
     def main(self):
         was_imported = self.env.get("munki_repo_changed")
         munkiInfo = self.env.get("munki_info")
+        version = self.env.get("munki_importer_summary_result")["data"]["version"]
         pkg_info = self.env.get("munki_importer_summary_result")["data"]["pkginfo_path"]
         username = self.env.get("username")
         access_token = self.env.get("access_token")
@@ -63,6 +64,7 @@ class AppTester(Processor):
                     "event_type": "app_test",
                     "client_payload": {
                         "app": name,
+                        "version": version,
                         "pkg_info": pkg_info,
                         "manifest_name": manifest_name
                     }
