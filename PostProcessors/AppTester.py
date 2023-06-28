@@ -54,7 +54,7 @@ class AppTester(Processor):
         manifest_name = self.env.get("manifest_name")
 
         if was_imported:
-            name = self.env.get("munki_importer_summary_result")["data"]["name"]
+            name = self.env.get("munki_importer_summary_result")["data"]["display_name"]
 
             if name:
                 command = f"/usr/local/munki/manifestutil --add-pkg {name} --manifest '{manifest_name}' --section 'managed_installs'"
