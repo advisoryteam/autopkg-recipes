@@ -46,8 +46,6 @@ class AppTester(Processor):
     def main(self):
         was_imported = self.env.get("munki_repo_changed")
         munkiInfo = self.env.get("munki_info")
-        version = self.env.get("munki_importer_summary_result")["data"]["version"]
-        pkg_info = self.env.get("munki_importer_summary_result")["data"]["pkginfo_path"]
         username = self.env.get("username")
         access_token = self.env.get("access_token")
         requests_url = self.env.get("requests_url")
@@ -55,6 +53,8 @@ class AppTester(Processor):
 
         if was_imported:
             name = self.env.get("munki_importer_summary_result")["data"]["display_name"]
+            version = self.env.get("munki_importer_summary_result")["data"]["version"]
+            pkg_info = self.env.get("munki_importer_summary_result")["data"]["pkginfo_path"]
 
             if name:
                 command = f"/usr/local/munki/manifestutil --add-pkg {name} --manifest '{manifest_name}' --section 'managed_installs'"
