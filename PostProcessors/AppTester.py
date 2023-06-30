@@ -56,24 +56,28 @@ class AppTester(Processor):
             version = self.env.get("munki_importer_summary_result")["data"]["version"]
             pkg_info = self.env.get("munki_importer_summary_result")["data"]["pkginfo_path"]
 
-            post_data = {
-                "event_type": "app_test",
-                "client_payload": {
-                    "app": name,
-                    "version": version,
-                    "pkg_info": pkg_info,
-                    "manifest_name": manifest_name
+            if name:
+                command = f"/usr/local/munki/manifestutil --add-pkg '{name}' --manifest '{manifest_name}' --section 'managed_installs'"
+                process = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, universal_newlines=True)
+                
+                post_data = {
+                    "event_type": "app_test",
+                    "client_payload": {
+                        "app": name,
+                        "version": version,
+                        "pkg_info": pkg_info,
+                        "manifest_name": manifest_name
+                    }
                 }
-            }
-            
-            headers = {
-                "Accept": "application/vnd.github.everest-preview+json",
-                "Content-Type": "application/json"
-            }
-            
-            auth = (username, access_token)
-            
-            response = requests.post(requests_url, headers=headers, data=json.dumps(post_data), auth=auth)
+                
+                headers = {
+                    "Accept": "application/vnd.github.everest-preview+json",
+                    "Content-Type": "application/json"
+                }
+                
+                auth = (username, access_token)
+                
+                response = requests.post(requests_url, headers=headers, data=json.dumps(post_data), auth=auth)
 
 if __name__ == "__main__":
     processor = AppTester()
