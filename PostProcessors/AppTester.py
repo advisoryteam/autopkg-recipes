@@ -52,7 +52,7 @@ class AppTester(Processor):
         manifest_name = self.env.get("manifest_name")
 
         if was_imported:
-            name = self.env.get("munki_importer_summary_result")["data"]["display_name"]
+            name = self.env.get("munki_importer_summary_result")["data"]["name"]
             version = self.env.get("munki_importer_summary_result")["data"]["version"]
             pkg_info = self.env.get("munki_importer_summary_result")["data"]["pkginfo_path"]
 
