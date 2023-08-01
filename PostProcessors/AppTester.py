@@ -57,7 +57,7 @@ class AppTester(Processor):
             pkg_info = self.env.get("munki_importer_summary_result")["data"]["pkginfo_path"]
 
             if name:
-                command = f"/usr/local/munki/manifestutil --add-pkg '{name}' --manifest '{manifest_name}' --section 'managed_installs' && /usr/local/bin/autopkg run -v MakeCatalogs.munki"
+                command = f"/usr/local/munki/manifestutil --add-pkg '{name}' --manifest '{manifest_name}' --section 'managed_installs'"
                 process = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, universal_newlines=True)
                 
                 post_data = {
