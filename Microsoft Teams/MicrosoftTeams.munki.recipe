@@ -13,7 +13,7 @@
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>Microsoft AutoUpdate</string>
+		<string>Microsoft Teams (New)</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>blocking_applications</key>
@@ -27,11 +27,11 @@
 				<string>Testing</string>
 			</array>
 			<key>description</key>
-			<string>Microsoft Teams</string>
+			<string>The new Microsoft Teams.</string>
 			<key>developer</key>
 			<string>Microsoft Corporation</string>
 			<key>display_name</key>
-			<string>Microsoft Teams</string>
+			<string>Microsoft Teams (New)</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
