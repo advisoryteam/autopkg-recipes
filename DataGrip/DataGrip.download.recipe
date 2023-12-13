@@ -2,50 +2,52 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Description</key>
-    <string>Downloads the current release version of Figma.
-            url for x86: https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=mac
-	    url for arm64: https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=macM1
-    </string>
-    <key>Identifier</key>
-    <string>com.github.advisoryteam.download.DataGrip</string>
-    <key>Input</key>
-    <dict>
-	<key>NAME</key>
-	<string>DataGrip</string>
-	<key>url</key>
-	<string>https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=mac</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>1.0.0</string>
-    <key>Process</key>
-    <array>
-	<dict>
-	<key>Arguments</key>
-	<dict>
-	    <key>filename</key>
-	    <string>%NAME%.dmg</string>
-            <key>url</key>
-            <string>%url%</string>
-	</dict>
-	<key>Processor</key>
-	<string>URLDownloader</string>
-	</dict>
-	<dict>
-	    <key>Processor</key>
-	    <string>EndOfCheckPhase</string>
-	</dict>
-	<dict>
-	    <key>Processor</key>
-	    <string>CodeSignatureVerifier</string>
-	    <key>Arguments</key>
-	    <dict>
-	        <key>input_path</key>
-	        <string>%pathname%/DataGrip.app</string>
-	        <key>requirement</key>
-	        <string>identifier "com.jetbrains.datagrip" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2ZEFAR8TH3"</string>
-	    </dict>
-        </dict>
-    </array>
+	<key>Description</key>
+	<string>Downloads the current release version of Figma.
+        	url for x86: https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=mac
+		url for arm64: https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=macM1
+    	</string>
+	<key>Identifier</key>
+	<string>com.github.advisoryteam.download.DataGrip</string>
+	<key>Input</key>
+    	<dict>
+		<key>NAME</key>
+		<string>DataGrip</string>
+		<key>url</key>
+		<string>https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=mac</string>
+    	</dict>
+    	<key>MinimumVersion</key>
+    	<string>1.0.0</string>
+    	<key>Process</key>
+    	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+	    			<key>filename</key>
+	    			<string>%NAME%.dmg</string>
+            			<key>url</key>
+			        <string>%url%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+	    		<key>Processor</key>
+	    		<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+	    		<key>Processor</key>
+	    		<string>CodeSignatureVerifier</string>
+		</dict>
+	    	<dict>
+			<key>Arguments</key>
+			<dict>
+	        		<key>input_path</key>
+	        		<string>%pathname%/DataGrip.app</string>
+	        		<key>requirement</key>
+	        		<string>identifier "com.jetbrains.datagrip" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "2ZEFAR8TH3"</string>
+	    		</dict>
+		</dict>
+    	</array>
 </dict>
 </plist>
