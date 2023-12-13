@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the current release version of DataGrip.
+    <string>Downloads the current release version of Figma.
             url for x86: https://download.jetbrains.com/product?code=DG&latest&distribution=mac
 	    url for arm64: https://download.jetbrains.com/product?code=DG&latest&distribution=macM1
     </string>
