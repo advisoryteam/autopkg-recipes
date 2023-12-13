@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>DataGrip</string>
 		<key>url</key>
-		<string>https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=mac</string>
+		<string>https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=mac</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>pkginfo</key>
