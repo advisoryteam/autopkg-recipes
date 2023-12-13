@@ -16,7 +16,7 @@
 		<key>NAME</key>
 		<string>DataGrip</string>
 		<key>url</key>
-		<string>https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=macd</string>
+		<string>https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=mac</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
