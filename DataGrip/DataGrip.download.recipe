@@ -5,13 +5,18 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of DataGrip.</string>
+		<string>Downloads the current release version of DataGrip.
+		url for x86: https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=mac
+		url for arm64: https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=macM1
+	</string>
 	<key>Identifier</key>
 	<string>com.github.advisoryteam.download.DataGrip</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>DataGrip</string>
+		<key>url</key>
+		<string>https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=macd</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -22,8 +27,6 @@
 			<dict>
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
-				<key>url</key>
-				<string>https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=mac</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
