@@ -4,8 +4,8 @@
 <dict>
     <key>Description</key>
     <string>Downloads the current release version of DataGrip.
-        url for x86: https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=mac
-	url for arm64: https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=macM1
+        url for x86: https://download.jetbrains.com/product?code=DG&latest&distribution=mac
+	url for arm64: https://download.jetbrains.com/product?code=DG&latest&distribution=macM1
     </string>
 	<key>Identifier</key>
 	<string>com.github.advisoryteam.download.DataGrip</string>
@@ -14,22 +14,22 @@
 	    <key>NAME</key>
 	    <string>DataGrip</string>
 	    <key>url</key>
-	    <string>https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=mac</string>
+	    <string>https://download.jetbrains.com/product?code=DG&latest&distribution=mac</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>Process</key>
 	<array>
 	    <dict>
-		<key>Processor</key>
-		<string>URLDownloader</string>
 		<key>Arguments</key>
 		<dict>
 		    <key>filename</key>
 		    <string>%NAME%.dmg</string>
-		    <key>url</key>
-		    <string>%url%</string>
+                	<key>url</key>
+                	<string>%url%</string>
 		</dict>
+		<key>Processor</key>
+		<string>URLDownloader</string>
 	    </dict>
 	    <dict>
 		<key>Processor</key>
