@@ -4,8 +4,8 @@
 <dict>
     <key>Description</key>
     <string>Downloads the current release version of Figma.
-            url for x86: https://download.jetbrains.com/product?code=DG&latest&distribution=mac
-	    url for arm64: https://download.jetbrains.com/product?code=DG&latest&distribution=macM1
+            url for x86: https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=mac
+	    url for arm64: https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=macM1
     </string>
     <key>Identifier</key>
     <string>com.github.advisoryteam.download.DataGrip</string>
@@ -14,7 +14,7 @@
 	<key>NAME</key>
 	<string>DataGrip</string>
 	<key>url</key>
-	<string>https://download.jetbrains.com/product?code=DG&latest&distribution=mac</string>
+	<string>https://download.jetbrains.com/product?code=DG&amp;latest&amp;distribution=mac</string>
     </dict>
     <key>MinimumVersion</key>
     <string>1.0.0</string>
