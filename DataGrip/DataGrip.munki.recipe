@@ -2,26 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of DataGrip and imports it into Munki.</string>
 	<key>Identifier</key>
 	<string>com.github.advisoryteam.munki.DataGrip</string>
 	<key>Input</key>
 	<dict>
-		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>DataGrip</string>
+		<key>url</key>
+		<string>https://www.jetbrains.com/datagrip/download/download-thanks.html?platform=mac</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>Testing</string>
 			</array>
 			<key>description</key>
-			<string> </string>
+			<string></string>
 			<key>developer</key>
 			<string>JetBrains s.r.o.</string>
 			<key>display_name</key>
